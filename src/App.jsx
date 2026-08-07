@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Send, Bot, User, Trash2, Loader2, Sparkles, Globe, Cpu, Zap, Brain, ChevronDown, Check, Terminal, Copy, Menu, Plus, X, MessageSquare, Paperclip, FileText, XCircle, Code, Eye, Image as ImageIcon, Wand2, Download, Edit3, FileCode, Settings, Moon, Sun, ShieldAlert, Sliders } from 'lucide-react';
 
-const apiKey = ""; 
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || ""; 
 
 const fetchWithRetry = async (url, options, retries = 5) => {
   const delays = [1000, 2000, 4000, 8000, 16000];

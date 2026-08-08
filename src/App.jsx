@@ -37,8 +37,8 @@ const generateOrEditImage = async (prompt, sourceImageBase64) => {
       }
     }
     return { text: textResponse || "Imagem gerada com sucesso!", generatedImage: imageBase64Result };
-  } catch (error) {
-    return { text: "Erro ao processar imagem.", generatedImage: null };
+    } catch (error) {
+    return { text: `Erro da API: ${error.message}`, usedSearch: false };
   }
 };
 

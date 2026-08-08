@@ -18,7 +18,7 @@ const fetchWithRetry = async (url, options, retries = 5) => {
 };
 
 const generateOrEditImage = async (prompt, sourceImageBase64) => {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent?key=${apiKey}`;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
   let parts = [{ text: prompt }];
   if (sourceImageBase64) {
     parts.push({ inlineData: { mimeType: "image/png", data: sourceImageBase64 } });
